@@ -49,7 +49,7 @@
     <ion-list id="bNFShop-list1" class="manual-list-fullwidth">
       <ion-item class="item-divider" id="bNFShop-list-item-divider1"> Recomended Clotes</ion-item>
       <ion-item class="item-thumbnail-left item-icon-right positive" ng-repeat="product in products" ui-sref="addToCart({id:product.id})">
-        <img src="http://localhost/dnf_shop/image/{{product.gambar}}">
+        <img src="{{product.gambar}}">
 		<h2positive>{{product.id}}
           <p style="white-space:normal;">Detail<br>
 		  Ukuran : {{product.ukuran}}

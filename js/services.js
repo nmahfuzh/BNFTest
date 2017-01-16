@@ -4,14 +4,14 @@ angular.module('app.services', [])
 	return{
 		name: 'Product Service',
 		getProducts:function(callback){
-			$http.get('http://localhost/dnf_shop/client/produk.php').success(function(data) {
+			$http.get('https://bnfserv.000webhostapp.com/client/produk.php').success(function(data) {
 				// prepare data here
 				callback(data);
 			});
 		},getProduct:function(id){            
 			var deferred = $q.defer();            
             //temp			
-			$http.get('http://localhost/dnf_shop/client/lihat_baju.php?id='+id).success(function(data) {
+			$http.get('https://bnfserv.000webhostapp.com/client/lihat_baju.php?id='+id).success(function(data) {
 				var product = data;
 				deferred.resolve(product);
 			 });

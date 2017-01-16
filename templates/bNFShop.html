@@ -1,0 +1,68 @@
+<ion-view title="BNFShop" hide-back-button="true" id="page1">
+  <ion-content padding="true" class=" manual-remove-top-padding has-header">
+    <form id="bNFShop-form18" class="list">
+      <div id="bNFShop-container1" class="item row">        
+          <label class="item item-input item-stacked-label col" id="bNFShop-input17" name="minPrice">
+            <span class="input-label">Min</span>
+            <input type="number" ng-model="FS.min" placeholder="Rp.">
+          </label>
+          <label class="item item-input item-stacked-label col" id="bNFShop-input16" name="maxPrice">
+            <span class="input-label">Max</span>
+            <input type="number"ng-model="FS.Max" placeholder="Rp.">
+          </label>   
+      </div>
+      <div id="bNFShop-container2" class="item row">
+      	<span class="col">Jenis</span>
+      	<span class="col">Ukuran</span>
+      	<span class="col">Gender</span>
+		
+      </div>
+      <div id="bNFShop-container3" class="item row">        
+          <label class="item item-select col" id="bNFShop-select4">
+            <span class="input-label">.</span>
+            <select ng-model="FS.j" name="Jenis">
+	            <option value="Kaos">Kaos</option>
+	            <option value="Jeans">Jeans</option>
+	            <option value="LongDress">Long Dress</option>	
+            </select>            
+          </label>
+          <label class="item item-select col" id="bNFShop-select5">
+            <span class="input-label"></span>
+            <select ng-model="FS.ukuran" name="Ukuran">
+            	<option value="XL">Xl</option>
+	            <option value="L">L</option>
+	            <option value="M">M</option>
+	            <option value="S">S</select>	
+            </select>            
+          </label>
+          <label class="item item-select col" id="bNFShop-select6">
+            <span class="input-label"></span>
+            <select ng-model="FS.Gender" name = "Gender">
+            	<option value="Laki">Laki - Laki</option>
+            	<option value="Perempuan">Perempuan</option>	
+            </select>            
+          </label>    
+      </div>
+      <button id="bNFShop-button3" ng-click="Bsearch()" class="button button-positive  button-full icon-right ion-android-search">Search</button>
+    </form>
+    
+    <ion-list id="bNFShop-list1" class="manual-list-fullwidth">
+      <ion-item class="item-divider" id="bNFShop-list-item-divider1"> Recomended Clotes</ion-item>
+      <ion-item class="item-thumbnail-left item-icon-right positive" ng-repeat="product in products" ui-sref="addToCart({id:product.id})">
+        <img src="http://localhost/dnf_shop/image/{{product.gambar}}">
+		<h2positive>{{product.id}}
+          <p style="white-space:normal;">Detail<br>
+		  Ukuran : {{product.ukuran}}
+		  <br>
+		  Gender : {{product.gender}}
+		  <br>
+		  model : {{product.model}}
+		  <br>
+		  harga : {{product.harga}}
+
+		  </p>
+          <i class="icon ion-android-cart"></i>
+        </h2positive>
+    </ion-list>
+  </ion-content>
+</ion-view>

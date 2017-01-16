@@ -1,0 +1,41 @@
+angular.module('app.routes', [])
+
+.config(function($stateProvider, $urlRouterProvider) {
+
+  // Ionic uses AngularUI Router which uses the concept of states
+  // Learn more here: https://github.com/angular-ui/ui-router
+  // Set up the various states which the app can be in.
+  // Each state's controller can be found in controllers.js
+  $stateProvider
+    
+  
+
+  .state('bNFShop', {
+    url: '/BNFHome',
+    templateUrl: 'templates/bNFShop.html',
+    controller: 'bNFShopCtrl'
+  })
+
+  .state('signup', {
+    url: '/BNFSignup',
+    templateUrl: 'templates/signup.html',
+    controller: 'signupCtrl'
+  })
+
+  .state('login', {
+    url: '/BNFLogin',
+    templateUrl: 'templates/login.html',
+    controller: 'loginCtrl'
+  })
+
+  .state('addToCart', {
+    url: '/BNFCart/:id',
+    templateUrl: 'templates/addToCart.html',
+    controller: 'addToCartCtrl'
+  })
+
+$urlRouterProvider.otherwise('/BNFLogin')
+
+  
+
+});

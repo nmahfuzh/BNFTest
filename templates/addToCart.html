@@ -1,0 +1,63 @@
+<ion-view title="Add To Cart" id="page4">
+  <ion-nav-buttons side="left" class="has-header">
+    <button class="button button-icon icon ion-android-cart"></button>
+  </ion-nav-buttons>
+  <ion-content padding="true" class="has-header">
+    <div style="margin: 0px; line-height: 250px; background-color: rgb(232, 235, 239); text-align: center;">
+		<img src="http://localhost/dnf_shop/image/{{product.gambar}}" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;">
+    </div>
+    <div id="addToCart-markdown1" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+       Of Product</p>
+    </div>
+    <form id="addToCart-form22" class="list">
+      <label class="item item-input" id="addToCart-input21">
+        <span class="input-label">IDBarang</span>
+        <input type="text" ng-model ="addCart.IDBarang" value="{{product.id}}" disabled>
+      </label>
+      <label class="item item-input" id="addToCart-input22">
+        <span class="input-label">IDUser</span>
+        <input type="text" ng-model="addCart.IDUser">
+      </label>
+      <label class="item item-input" id="addToCart-textarea1" name="AddressUser">
+        <span class="input-label">Alamat</span>
+		<textarea placeholder="Alamat Lengkap" ng-model="addCart.alamat"></textarea></label>
+      <label class="item item-select" id="addToCart-select7">
+        <span class="input-label">Ukuran</span>
+       <select ng-model="addCart.Ukuran">
+              <option value="XL">Xl</option>
+              <option value="L">L</option>
+              <option value="M">M</option>
+              <option value="S">S</select>  
+            </select>   
+      </label>
+      <label class="item item-input" id="addToCart-input22">
+        <span class="input-label">Harga</span>
+        <input type="number"ng-model="addCart.Harga" value="{{product.harga}}">
+      </label>
+	  <label class="item item-input" id="addToCart-input23">
+        <span class="input-label">Jumlah</span>
+        <input type="number" value="" ng-change="myFunc()" ng-model="addCart.jml">
+      </label>	   
+      <label class="item item-input" id="addToCart-input24">
+        <span class="input-label">Total</span>
+        <input type="number" ng-model="addCart.Total" ng-value="total">
+      </label>
+      <label class="item item-select" id="addToCart-select8" name="BNFDelivery">
+        <span class="input-label">Delivery by</span>
+        <select ng-model="Pengiriman" ng-model="addCart.Pengiriman">
+          <option value="JNE">JNE</option>
+          <option value="TIKI">TIKI</option>
+          <option value="POS">POS</option>
+          <option value="GoJek">GoJek</option>
+        </select>
+      </label>
+      <label class="item item-input" id="addToCart-input25">
+        <span class="input-label">Tangal</span>
+        <input type="date" ng-model="addCart.Tangal">
+      </label>
+      <button id="addToCart-button6" ng-click="addCartShop()" class="button button-assertive  button-block icon-right ion-android-cart">Add To Cart</button>
+    </form>
+  </ion-content>
+</ion-view>
+{{addCart | json}};
